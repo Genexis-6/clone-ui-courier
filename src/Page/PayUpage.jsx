@@ -31,14 +31,13 @@ export default function PayUpage({
 
   return (
     <div className="content-body">
-      <Header />
+      <Header ref = {sectionRef}/>
       {prcessing ? (
         <LoadingSection />
       ) : (
         <Payment
           displayNotification={displayNotification}
           setNotificationMessage={setNotificationMessage}
-          sectionRef={sectionRef}
         />
       )}
       <Footer />

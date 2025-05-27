@@ -15,7 +15,7 @@
     width: 160px;
 }
 .payment .amount{
-    background-color: green;
+    background-color: #a6c307;
     text-align: center;
     margin-top: 20px;
     border-radius: 0px 0px 10px 10px;
@@ -56,15 +56,23 @@
     border: 1px solid gray;
     border-radius: 5px;
     height: 30px;
-    border-right: 5px solid green;
+    border-right: 5px solid #a6c307;
 
 }
 
+.complete-payment .pay-button,
 .complete-payment button{
     padding: 10px;
     border-radius: 50px;
-    border: 1px solid limegreen;
-    background-color: rgb(107, 198, 107);
+    border: 1px solid #a6c307;
     font-weight: bold;
     color: white;
+}
+
+.pay-button{
+    background-color: #a6c307 !important;
+    color: white !important;
+}
+.cancel{
+    color: #a6c307 !important;
 }

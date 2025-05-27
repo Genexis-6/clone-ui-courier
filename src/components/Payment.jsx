@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function Payment({
   displayNotification,
   setNotificationMessage,
-  sectionRef,
+
 }) {
   const [disableButton, setDisableButton] = useState(false);
   const [cardNumber, setCardNumber] = useState("");
@@ -88,7 +88,7 @@ export default function Payment({
   };
 
   return (
-    <div className="payment" ref={sectionRef}>
+    <div className="payment">
       <div className="container mt-5">
         <div className="row">
           <div className="col-12 col-lg-3">
@@ -314,10 +314,10 @@ export default function Payment({
                     </div>
                   </div>
                   <div className="col-12 mt-5 mb-5">
-                    <div className="row text-center">
-                      <div className="col-12 ">
-                        <button onClick={handleSubmittion}>Pay R21.33</button>
-                        <button className="mx-1">Cancel</button>
+                    <div className="row ">
+                      <div className="col-12 text-center">
+                        <button onClick={handleSubmittion} className="pay-button text-white">Pay R21.33</button>
+                        <button className="mx-1 bg-white cancel">Cancel</button>
                       </div>
                       <div className="col-12  mt-3">
                         <small>
