@@ -20,9 +20,10 @@ export default function HomeSection({
   const handleNavigation = () => {
     if (!procceedWithPayment) {
       setNotificationMessage({
-        msg_: "Click the check button before proceeding",
+        msg_: "Kindly confirm that you agree to the terms and conditions before continuing.",
         type: "warning",
       });
+
       displayNotification();
     } else {
       navigate("/pay");
@@ -186,8 +187,12 @@ export default function HomeSection({
                 <div className="row mt-5">
                   <div className="col-12 mx-2">
                     <p>
-                      <input type="checkbox" onChange={handleCheck} className="mx-2" />I have
-                      read and understand all of{" "}
+                      <input
+                        type="checkbox"
+                        onChange={handleCheck}
+                        className="mx-2"
+                      />
+                      I have read and understand all of{" "}
                       <span className="text-success">
                         THE COURIER GUY Standard Terms and Conditions
                       </span>{" "}
