@@ -1,0 +1,33 @@
+.notification {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  padding: 10px;
+  pointer-events: none;
+}
+
+.notification .alert {
+  margin: 30px auto;
+  z-index: 100;
+  animation: show-notification 0.5s ease-in-out, hide-notification 0.5s ease-in-out 1.5s forwards;
+}
+
+
+@keyframes show-notification {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes hide-notification {
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
