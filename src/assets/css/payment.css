@@ -1,0 +1,70 @@
+.payment{
+    min-height: 80vh;
+    height: fit-content;
+    padding: 10px;
+}
+.payment .card{
+    min-height: 30vh;
+    height: fit-content;
+    padding: 0px 10px 0px 10px;
+    border-radius: 10px;
+    
+}
+
+.payment img{
+    width: 160px;
+}
+.payment .amount{
+    background-color: green;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 0px 0px 10px 10px;
+    
+    
+}
+
+.payment p{
+    margin: 0;
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .payment .amount{
+        margin-top: 0px;
+        height: 30vh;
+        border-radius: 0px 10px 10px 0px;
+        
+    }
+    .amount .price{
+        margin-top: 50px;
+    }
+    
+}
+@media screen and (min-width:992px) {
+    .payment .card{
+        width: 230px;
+    }
+}
+
+.complete-payment{
+    border-radius: 10px;
+}
+.complete-payment .visa{
+    width: 100px;
+}
+.complete-payment .form select,
+.complete-payment .form input{
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 30px;
+    border-right: 5px solid green;
+
+}
+
+.complete-payment button{
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid limegreen;
+    background-color: rgb(107, 198, 107);
+    font-weight: bold;
+    color: white;
+}

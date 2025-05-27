@@ -1,0 +1,56 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    padding: 0 10px 10px 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  
+}
+@media screen and (min-width: 992px) {
+    nav{
+        background-color: rgba(247, 188, 26, 0.982);
+        transition: all 0.7s ease-in-out;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7);
+    }  
+}
+
+nav .nav-links{
+    margin-left: 50px ;
+    display: flex;
+}
+
+nav .nav-link{
+    margin: 10px 0px 0 15px;
+}
+nav .nav-link a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 19px;
+
+}
+nav .nav-link a:hover{
+    color: red;
+}
+nav img{
+    width: 180px;
+}
+
+
+.hambugger img{
+    width: 50px;
+    position: absolute;
+    margin: 0 0 0 -40px;
+}
+
+button{
+    background-color: #279989 !important;
+}

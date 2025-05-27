@@ -1,0 +1,153 @@
+
+
+.content-body .heading{
+    position: absolute;
+    top: 0;
+    display: flex;
+    right: 0;
+    margin: -30px 30px 0 0;
+    z-index: -10000;
+
+    justify-content: center;
+    align-items: center;
+}
+.content-body hr{
+    margin-top: 65px;
+    border: 2px solid grey;
+    width: 100% !important;
+}
+.content-body .payu-logo{
+    width: 130px;
+    
+}
+.homeSection{
+    background-color: whitesmoke;
+    
+}
+.progress-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-section .bars{
+    height: 10px;
+    width: 16.667%;
+    background-color: #279989;
+    margin: 0 -5px 0 -1px;
+}
+.progress-section .bars-1{
+    width: 6%;
+    background-color: #279989;
+    height: 10px;
+    
+}
+.progress-section .checkpoint{
+    background-color: #279989;
+    padding: 15px;
+    border-radius: 50%;
+    font-weight: bold;
+    color: white;
+    font-size: 17px;
+}
+.progress-section .warning{
+    background-color: #f7b512;
+}
+.progress-section .secondary{
+    background-color: #d3d3d3;
+}
+@media screen and (max-width:500px) {
+    .progress-section .checkpoint{
+        padding: 10px;
+    }
+}
+.progress-section .checkpoint:hover{
+    transition: 0.5s ease-in-out;
+    transform: scale(1.06);
+    cursor: pointer;
+}
+.progress-section span{
+    position: absolute;
+    margin: 0 0 0 0px;
+    font-size: 13px;
+}
+.first-content{
+    background-color: white;
+    height: fit-content;
+    margin: 10px auto;
+}
+@media screen and (min-width:768px) {
+    .first-content{
+        min-height: 85vh;
+    }
+}
+.first-content span,
+.first-content p{
+    max-width: 600px;
+}
+.first-content span{
+    font-size: 12px;
+}
+
+.check-bar{
+    background-color: whitesmoke;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    border-left: 8px solid green;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.check-bar input[type="checkbox"]{
+    transform: scale(1.8);
+    
+}
+.check-bar p{
+    max-width: 300px;
+    
+}
+.confirm-section p{
+    max-width: 1200px;
+}
+.confirm-section input[type="checkbox"]{
+    transform: scale(2);
+
+}
+.confirm-section button{
+    border-radius: 0px !important;
+}
+input[type="checkbox"]:checked{
+
+    accent-color: green;
+    accent-color: green;
+    transition: accent-color 1s ease;
+}
+.info{
+    background-color: rgb(96, 93, 93);
+}
+.info-section-2{
+    background-color: rgb(56, 53, 53);
+    color: gray;
+}
+.info-section-2 a{
+    text-decoration: none;
+    color: gray;
+}
+.info-section-2 a:hover{
+    color: blue;
+}
+.info-section-2 span{
+    font-size: 13px;
+}
+.allowed-method img{
+    width: 40px;
+
+}
+.method{
+    border-left: 1px solid rgb(183, 180, 180);
+}
+
+
+.footer img{
+    width: 70px;
+}

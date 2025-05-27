@@ -1,0 +1,22 @@
+.loading-container{
+    height: 90vh;
+}
+.loading-container .container{
+
+    border-radius: 10px;
+    height: 80vh;
+
+}
+.loading-container .top{
+    height: 5vh;
+    background-color: whitesmoke;
+}
+.loading-container .loader{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+
+
