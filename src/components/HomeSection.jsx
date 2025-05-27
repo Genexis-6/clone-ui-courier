@@ -186,7 +186,7 @@ export default function HomeSection({
                 <div className="row mt-5">
                   <div className="col-12 mx-2">
                     <p>
-                      <input type="checkbox" onChange={handleCheck} />I have
+                      <input type="checkbox" onChange={handleCheck} className="mx-2" />I have
                       read and understand all of{" "}
                       <span className="text-success">
                         THE COURIER GUY Standard Terms and Conditions
