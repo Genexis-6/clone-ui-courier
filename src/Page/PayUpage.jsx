@@ -3,36 +3,43 @@ import Payment from "../components/Payment";
 import Header from "../components/Header";
 import Footer from "../components/footer";
 import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function PayUpage() {
+export default function PayUpage({
+  displayNotification,
+  setNotificationMessage,
+}) {
   const [prcessing, setProcessing] = useState(true);
+  const navigate = useNavigate;
+  const proceed = sessionStorage.getItem("proceed") === "true";
   const sectionRef = useRef(null);
-  const [alreadyPorcessed, setAlreadyProcessed] = useState(
-    sessionStorage.getItem("alreadyProcessed") === "true"
-  );
 
   useEffect(() => {
-    if (!alreadyPorcessed) {
-      setTimeout(() => {
-        setProcessing(false);
-      }, 3000);
-      sessionStorage.setItem("alreadyProcessed", "true");
+    if (!proceed) {
+      navigate("/");
     }
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setProcessing(false);
+    }, 2000);
   }, []);
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
-  console.log(alreadyPorcessed);
   return (
     <div className="content-body">
       <Header />
-      {alreadyPorcessed ? (
-        <Payment />
-      ) : prcessing ? (
-        <LoadingSection ref={sectionRef} />
+      {prcessing ? (
+        <LoadingSection />
       ) : (
-        <Payment />
+        <Payment
+          displayNotification={displayNotification}
+          setNotificationMessage={setNotificationMessage}
+          sectionRef={sectionRef}
+        />
       )}
       <Footer />
     </div>

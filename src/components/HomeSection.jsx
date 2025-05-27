@@ -5,23 +5,30 @@ import { ChevronRight } from "lucide-react";
 import ProgressBar from "./ProgressBar";
 import { useState } from "react";
 
-export default function HomeSection({ navigate, displayNotification ,setNotificationMessage }) {
-    const [procceedWithPayment, setProceedWithPayment] = useState(false)
+export default function HomeSection({
+  navigate,
+  displayNotification,
+  setNotificationMessage,
+}) {
+  const [procceedWithPayment, setProceedWithPayment] = useState(false);
 
-  console.log(procceedWithPayment)
-  const handleCheck = () =>{
-    setProceedWithPayment(prev => !prev)
-  }
+  console.log(procceedWithPayment);
+  const handleCheck = () => {
+    setProceedWithPayment((prev) => !prev);
+  };
 
-  const handleNavigation = () =>{
-    if(!procceedWithPayment){
-      setNotificationMessage({msg_:"Click the check button before proceeding", type:"warning"})
-      displayNotification()
-    }else{
-      navigate("/pay")
-      sessionStorage.setItem("proceed", "true")
+  const handleNavigation = () => {
+    if (!procceedWithPayment) {
+      setNotificationMessage({
+        msg_: "Click the check button before proceeding",
+        type: "warning",
+      });
+      displayNotification();
+    } else {
+      navigate("/pay");
+      sessionStorage.setItem("proceed", "true");
     }
-  }
+  };
   return (
     <>
       <div className="container homeSection">
@@ -31,7 +38,7 @@ export default function HomeSection({ navigate, displayNotification ,setNotifica
               <div className="col-12 bg-white border">
                 <div className="row mt-2">
                   <div className="col-12 mb-4">
-                    <ProgressBar/>
+                    <ProgressBar />
                   </div>
                 </div>
               </div>
@@ -151,7 +158,7 @@ export default function HomeSection({ navigate, displayNotification ,setNotifica
                                     type="checkbox"
                                     name=""
                                     id=""
-                                    checked = {true}
+                                    checked={true}
                                   />
                                 </div>
                                 <div className="col-11">Pay by Card</div>
@@ -179,7 +186,8 @@ export default function HomeSection({ navigate, displayNotification ,setNotifica
                 <div className="row mt-5">
                   <div className="col-12 mx-2">
                     <p>
-                      <input type="checkbox"  onChange={handleCheck}/>I have read and understand all of{" "}
+                      <input type="checkbox" onChange={handleCheck} />I have
+                      read and understand all of{" "}
                       <span className="text-success">
                         THE COURIER GUY Standard Terms and Conditions
                       </span>{" "}

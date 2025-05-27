@@ -10,30 +10,44 @@ function App() {
   const [disableNav, setDisableNav] = useState(
     sessionStorage.getItem("disableNav") === "true"
   );
-  const [showNotification, setShowNotification] = useState(false)
+  const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState({
-    msg_:"",
-    type:""
-  })
+    msg_: "",
+    type: "",
+  });
 
-  const displayNotification = () =>{
-    setShowNotification(true)
+  const displayNotification = () => {
+    setShowNotification(true);
     setTimeout(() => {
-      setShowNotification(false)
+      setShowNotification(false);
     }, 3000);
-  }
-
-
+  };
 
   return (
     <>
-    {showNotification && <Notification data={notificationMessage}/>}
+      {showNotification && <Notification data={notificationMessage} />}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route element={<ContentBody displayNotification={displayNotification} setNotificationMessage={setNotificationMessage} />} index />
+            <Route
+              element={
+                <ContentBody
+                  displayNotification={displayNotification}
+                  setNotificationMessage={setNotificationMessage}
+                />
+              }
+              index
+            />
           </Route>
-          <Route element={<PayUpage />} path="/pay" />
+          <Route
+            element={
+              <PayUpage
+                displayNotification={displayNotification}
+                setNotificationMessage={setNotificationMessage}
+              />
+            }
+            path="/pay"
+          />
         </Routes>
       </BrowserRouter>
     </>

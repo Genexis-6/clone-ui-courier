@@ -2,9 +2,93 @@ import theCourier from "../assets/images/the-courier-guy-logo.png";
 import visaCard from "../assets/images/mastacard-visa.png";
 
 import "../assets/css/payment.css";
-export default function Payment() {
+import { useState } from "react";
+export default function Payment({
+  displayNotification,
+  setNotificationMessage,
+  sectionRef,
+}) {
+  const [disableButton, setDisableButton] = useState(false);
+  const [cardNumber, setCardNumber] = useState("");
+
+  const [cardHolderName, setCardHolderName] = useState("");
+  const [cardMonth, setCardMonth] = useState("");
+  const [cardYear, setCardYear] = useState("");
+  const [cvvNumber, setCvvNumber] = useState("");
+  const [PhoneNumber, setPhoneNmuber] = useState("");
+
+  const handleSubmittion = () => {
+    if (cardNumber.trim() === "") {
+      setNotificationMessage({
+        msg_: "Card number is required.",
+        type: "warning",
+      });
+      displayNotification();
+    } else if (cardNumber.length !== 16) {
+      setNotificationMessage({
+        msg_: "Card number must be exactly 16 digits.",
+        type: "warning",
+      });
+      displayNotification();
+    } else if (!/^\d+$/.test(cardNumber)) {
+      setNotificationMessage({
+        msg_: "Card number must contain only numbers.",
+        type: "warning",
+      });
+      displayNotification();
+    } else if (cardHolderName.trim() === "") {
+      setNotificationMessage({
+        msg_: "Card holder name is required.",
+        type: "warning",
+      });
+      displayNotification();
+    } else if (cardMonth === "MM" || cardMonth.trim() === "") {
+      setNotificationMessage({
+        msg_: "Please select a valid expiry month.",
+        type: "warning",
+      });
+      displayNotification();
+    } else if (cardYear === "YY" || cardYear.trim() === "") {
+      setNotificationMessage({
+        msg_: "Please select a valid expiry year.",
+        type: "warning",
+      });
+      displayNotification();
+    } else if (cvvNumber.length !== 3) {
+      setNotificationMessage({
+        msg_: "CVV must be exactly 3 digits.",
+        type: "warning",
+      });
+      displayNotification();
+    } else if (!/^\d+$/.test(cvvNumber)) {
+      setNotificationMessage({
+        msg_: "CVV must contain only numbers.",
+        type: "warning",
+      });
+      displayNotification();
+    } else if (PhoneNumber.length !== 11) {
+      setNotificationMessage({
+        msg_: "Phone number must be exactly 11 digits.",
+        type: "warning",
+      });
+      displayNotification();
+    } else if (!/^\d+$/.test(PhoneNumber)) {
+      setNotificationMessage({
+        msg_: "Phone number must contain only numbers.",
+        type: "warning",
+      });
+      displayNotification();
+    } else {
+      setNotificationMessage({
+        msg_: "Proceed with the payment.",
+        type: "success",
+      });
+      displayNotification();
+    }
+  };
+
   return (
-    <div className="payment">
+    <div className="payment" ref={sectionRef}>
       <div className="container mt-5">
         <div className="row">
           <div className="col-12 col-lg-3">
@@ -75,7 +159,15 @@ export default function Payment() {
                         <p>Card number</p>
                       </div>
                       <div className="col-sm-12 col-md-10">
-                        <input type="text" className="w-100" />
+                        <input
+                          type="text"
+                          className="w-100"
+                          maxLength={16}
+                          onChange={(event) => {
+                            setCardNumber(event.target.value);
+                          }}
+                          required={true}
+                        />
                       </div>
                     </div>
                   </div>
@@ -85,7 +177,14 @@ export default function Payment() {
                         <p>Card holder name</p>
                       </div>
                       <div className="col-sm-12 col-md-10">
-                        <input type="text" className="w-100" />
+                        <input
+                          type="text"
+                          className="w-100"
+                          onChange={(event) => {
+                            setCardHolderName(event.target.value);
+                          }}
+                          required={true}
+                        />
                       </div>
                     </div>
                   </div>
@@ -99,10 +198,13 @@ export default function Payment() {
                             <select
                               id="mm"
                               name="mm"
-                              class=" expMonth expiry-date w-100"
-                              required=""
+                              className=" expMonth expiry-date w-100"
+                              onChange={(event) => {
+                                setCardMonth(event.target.value);
+                              }}
+                              required={true}
                             >
-                              <option value="-1">MM</option>{" "}
+                              <option value="MM">MM</option>{" "}
                               <option value="01">01</option>
                               <option value="02">02</option>
                               <option value="03">03</option>
@@ -121,10 +223,13 @@ export default function Payment() {
                             <select
                               id="yy"
                               name="yy"
-                              class=" expYear expiry-date w-100"
-                              required=""
+                              className=" expYear expiry-date w-100"
+                              onChange={(event) => {
+                                setCardYear(event.target.value);
+                              }}
+                              required={true}
                             >
-                              <option value="-1">YY</option>{" "}
+                              <option value="YY">YY</option>{" "}
                               <option value="2023">2023</option>
                               <option value="2024">2024</option>
                               <option value="2025">2025</option>
@@ -177,7 +282,15 @@ export default function Payment() {
                         <p>CVV number</p>
                       </div>
                       <div className="col-sm-12 col-md-10">
-                        <input type="text" className="w-100" />
+                        <input
+                          type="text"
+                          className="w-100"
+                          maxLength={3}
+                          onChange={(event) => {
+                            setCvvNumber(event.target.value);
+                          }}
+                          required={true}
+                        />
                       </div>
                     </div>
                   </div>
@@ -188,14 +301,22 @@ export default function Payment() {
                         <p>Phone number</p>
                       </div>
                       <div className="col-sm-12 col-md-10">
-                        <input type="text" className="w-100" />
+                        <input
+                          type="text"
+                          className="w-100"
+                          maxLength={11}
+                          onChange={(event) => {
+                            setPhoneNmuber(event.target.value);
+                          }}
+                          required={true}
+                        />
                       </div>
                     </div>
                   </div>
                   <div className="col-12 mt-5 mb-5">
                     <div className="row text-center">
                       <div className="col-12 ">
-                        <button>Pay R21.33</button>
+                        <button onClick={handleSubmittion}>Pay R21.33</button>
                         <button className="mx-1">Cancel</button>
                       </div>
                       <div className="col-12  mt-3">
