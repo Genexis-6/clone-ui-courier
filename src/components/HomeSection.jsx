@@ -2,6 +2,7 @@ import visa from "../assets/images/visa.png";
 import masterCard from "../assets/images/master-card.png";
 import eft from "../assets/images/eft.png";
 import { ChevronRight } from "lucide-react";
+import ProgressBar from "./ProgressBar";
 
 export default function HomeSection({ navigate }) {
   return (
@@ -12,33 +13,8 @@ export default function HomeSection({ navigate }) {
             <div className="row p-2 ">
               <div className="col-12 bg-white border">
                 <div className="row mt-2">
-                  <div className="col-12 progress-section mb-4">
-                    <div className="bars-1"></div>
-                    <div>
-                      <div className="checkpoint">01</div>
-                      <span>order</span>
-                    </div>
-                    <div className="bars"></div>
-                    <div>
-                      <div className="checkpoint">02</div>
-                      <span>Percel Dimensions</span>
-                    </div>
-                    <div className="bars"></div>
-                    <div>
-                      <div className="checkpoint">03</div>
-                      <span>Service</span>
-                    </div>
-                    <div className="bars bg-warning warning"></div>
-                    <div>
-                      <div className="checkpoint warning">04</div>
-                      <span className="fw-bold">Shipping fees</span>
-                    </div>
-                    <div className="bars secondary"></div>
-                    <div>
-                      <div className="checkpoint secondary">05</div>
-                      <span>complete</span>
-                    </div>
-                    <div className="bars-1 secondary"></div>
+                  <div className="col-12 mb-4">
+                    <ProgressBar/>
                   </div>
                 </div>
               </div>
