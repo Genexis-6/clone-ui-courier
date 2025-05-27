@@ -1,11 +1,11 @@
 .notification {
   position: sticky;
-  top: 0;
+  top: 100px;
   width: 100%;
   height: fit-content;
   padding: 10px;
   pointer-events: none;
-  z-index: 1000;
+  z-index: 100000;
 }
 
 .notification .alert {
