@@ -3,8 +3,25 @@ import masterCard from "../assets/images/master-card.png";
 import eft from "../assets/images/eft.png";
 import { ChevronRight } from "lucide-react";
 import ProgressBar from "./ProgressBar";
+import { useState } from "react";
 
-export default function HomeSection({ navigate }) {
+export default function HomeSection({ navigate, displayNotification ,setNotificationMessage }) {
+    const [procceedWithPayment, setProceedWithPayment] = useState(false)
+
+  console.log(procceedWithPayment)
+  const handleCheck = () =>{
+    setProceedWithPayment(prev => !prev)
+  }
+
+  const handleNavigation = () =>{
+    if(!procceedWithPayment){
+      setNotificationMessage({msg_:"Click the check button before proceeding", type:"warning"})
+      displayNotification()
+    }else{
+      navigate("/pay")
+      sessionStorage.setItem("proceed", "true")
+    }
+  }
   return (
     <>
       <div className="container homeSection">
@@ -134,7 +151,7 @@ export default function HomeSection({ navigate }) {
                                     type="checkbox"
                                     name=""
                                     id=""
-                                    checked
+                                    checked = {true}
                                   />
                                 </div>
                                 <div className="col-11">Pay by Card</div>
@@ -162,7 +179,7 @@ export default function HomeSection({ navigate }) {
                 <div className="row mt-5">
                   <div className="col-12 mx-2">
                     <p>
-                      <input type="checkbox" />I have read and understand all of{" "}
+                      <input type="checkbox"  onChange={handleCheck}/>I have read and understand all of{" "}
                       <span className="text-success">
                         THE COURIER GUY Standard Terms and Conditions
                       </span>{" "}
@@ -177,9 +194,7 @@ export default function HomeSection({ navigate }) {
                   <div className="col-12">
                     <button
                       className="w-100 btn btn-success fw-bold"
-                      onClick={() => {
-                        navigate("/pay");
-                      }}
+                      onClick={handleNavigation}
                     >
                       CONFIRM AND PROCEED TO PAYMENT
                     </button>

@@ -24,11 +24,7 @@ function App() {
   }
 
 
-  useEffect(() => {
-  displayNotification(); 
-}, []);
 
-  
   return (
     <>
     {showNotification && <Notification data={notificationMessage}/>}

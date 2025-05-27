@@ -1,15 +1,17 @@
 .notification {
-  position: absolute;
+  position: sticky;
+  top: 0;
   width: 100%;
   height: fit-content;
   padding: 10px;
   pointer-events: none;
+  z-index: 1000; 
 }
 
 .notification .alert {
   margin: 30px auto;
   z-index: 100;
-  animation: show-notification 0.5s ease-in-out, hide-notification 0.5s ease-in-out 1.5s forwards;
+  animation: show-notification 0.7s ease-in-out, hide-notification 0.5s ease-in-out 1.5s forwards;
 }
 
 
