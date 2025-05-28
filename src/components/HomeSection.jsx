@@ -3,7 +3,7 @@ import masterCard from "../assets/images/master-card.png";
 import eft from "../assets/images/eft.png";
 import { ChevronRight } from "lucide-react";
 import ProgressBar from "./ProgressBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function HomeSection({
   navigate,
@@ -11,8 +11,11 @@ export default function HomeSection({
   setNotificationMessage,
 }) {
   const [procceedWithPayment, setProceedWithPayment] = useState(false);
-
-  console.log(procceedWithPayment);
+  useEffect(
+    ()=>{
+      sessionStorage.removeItem("proceed")
+    }, []
+  )
   const handleCheck = () => {
     setProceedWithPayment((prev) => !prev);
   };

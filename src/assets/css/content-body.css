@@ -24,38 +24,10 @@
     background-color: whitesmoke;
     
 }
-.progress-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.progress-section .bars{
-    height: 10px;
-    width: 16.667%;
-    background-color: #279989;
-    margin: 0 -5px 0 -1px;
-}
-.progress-section .bars-1{
-    width: 6%;
-    background-color: #279989;
-    height: 10px;
-    
-}
-.progress-section .checkpoint{
-    background-color: #279989;
-    padding: 15px;
-    border-radius: 50%;
-    font-weight: bold;
-    color: white;
-    font-size: 17px;
-}
-.progress-section .warning{
-    background-color: #f7b512;
-}
-.progress-section .secondary{
-    background-color: #d3d3d3;
-}
+
+
+
 @media screen and (max-width:500px) {
     .progress-section .checkpoint{
         padding: 10px;
@@ -78,7 +50,7 @@
 }
 @media screen and (min-width:768px) {
     .first-content{
-        min-height: 85vh;
+        min-height: 670px;
     }
 }
 .first-content span,

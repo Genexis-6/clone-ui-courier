@@ -4,7 +4,7 @@
     padding: 10px;
 }
 .payment .card{
-    min-height: 30vh;
+    min-height: 170px;
     height: fit-content;
     padding: 0px 10px 0px 10px;
     border-radius: 10px;
@@ -30,7 +30,7 @@
 @media (min-width:768px) and (max-width:991px) {
     .payment .amount{
         margin-top: 0px;
-        height: 30vh;
+        height: 170px;
         border-radius: 0px 10px 10px 0px;
         
     }
