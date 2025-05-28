@@ -1,10 +1,10 @@
 .loading-container{
-    height: 90vh;
+    height: 500px;
 }
 .loading-container .container{
-
     border-radius: 10px;
-    height: 80vh;
+    height: fit-content;
+    padding-bottom: 30px;
 
 }
 .loading-container .top{
